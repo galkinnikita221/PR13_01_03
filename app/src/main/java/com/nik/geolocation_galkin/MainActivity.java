@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.results);
         _LocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
     }
-
+asdad
     LocationListener _LocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(@NonNull Location location) {
