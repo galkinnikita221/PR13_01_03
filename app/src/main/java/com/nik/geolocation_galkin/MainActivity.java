@@ -3,11 +3,15 @@ package com.nik.geolocation_galkin;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.results);
         _LocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
     }
-asdad
     LocationListener _LocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(@NonNull Location location) {
@@ -43,4 +46,16 @@ asdad
             }
         }
     };
+
+    public boolean GetPermissGPS() {
+        ACCESS_FINE_LOCATION = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        ACCESS_COARSE_LOCATION = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        return ACCESS_FINE_LOCATION == PackageManager.PERMISSION_GRANTED || ACCESS_COARSE_LOCATION == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public void onGetGPS(View view) {
+        if (GetPermissGPS() == false) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        }
+    }
 }
