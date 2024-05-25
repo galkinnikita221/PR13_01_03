@@ -32,6 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/results"
             android:text="Местоположение определено с помощью интернета:\nдолгота - 58.0115013 широта - 58.0115013"
             android:layout_gravity="center"
             android:textSize="12sp"

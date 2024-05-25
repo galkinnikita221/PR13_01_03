@@ -1,5 +1,6 @@
 package com.nik.geolocation_galkin;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        result = findViewById(R.id.results);
+        _LocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
     }
 
     LocationListener _LocationListener = new LocationListener() {
