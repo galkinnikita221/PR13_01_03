@@ -16,7 +16,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginLeft="125dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/map" />
 
         <TextView
@@ -30,21 +30,66 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/results"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Местоположение определено с помощью интернета:\nдолгота - 58.0115013 широта - 58.0115013"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="53dp"
+            android:id="@+id/results2"
+            android:layout_gravity="center"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/results"
-            android:text="Местоположение определено с помощью интернета:\nдолгота - 58.0115013 широта - 58.0115013"
-            android:layout_gravity="center"
-            android:textSize="12sp"
-            android:layout_marginTop="40dp"/>
+            android:text="Введите долготу"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:layout_width="220dp"
+            android:id="@+id/dolgota"
+            android:layout_height="40dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Введите широта"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:layout_width="220dp"
+            android:id="@+id/shirota"
+            android:layout_height="40dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Определить"
+            android:text="Получить адрес"
             android:textAllCaps="false"
-            android:layout_marginTop="260dp"
+            android:onClick="onGetAddress"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="300dp"
+            android:onClick="onCalculate"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Рассчитать"
+            android:textAllCaps="false"/>
+
     </LinearLayout>
 
 
